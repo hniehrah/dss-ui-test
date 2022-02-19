@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+/* General styling */
+html {
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  background: linear-gradient(#292929, #141414);
+  background-attachment: fixed;
+  color: #333;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: white;
+}
+
+h2 {
+  color: white;
+  font-weight: bolder;
+  margin: 0 0 0 30px;
+  padding-top: 30px;
+}
+
+.error-message {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+::-webkit-scrollbar {
+  width: 0; 
+  background: transparent;  
+}
+
+/* Carousel-specific styling */
+.carousel {
+  overflow-y: scroll;
+  display: flex;
+  scrollbar-width: none;
+  padding: 20px 0;
+  gap: 10px;
+}
+
+.carousel > div:first-of-type {
+  margin-left: 30px;
+}
+
+.carousel > div:last-of-type {
+  margin-right: 20px;
+}
+
+.special-set {
+  background: #444;
+}
+
+/* Thumbnail styling */
+@media only screen and (max-width: 481px) {
+  .thumbnail-button, .thumbnail-button-special {
+    width: 120px;
+    height: 169px;
+  }
+
+  .carousel > div:first-of-type, .carousel > div:last-of-type {
+    margin-left: 10px;
+  }
+
+  .carousel {
+    padding: 5px 0;
+  }
+
+  h2 {
+    margin-left: 10px;
+    padding-top: 10px;
+  }
+
+  .modal-open {
+    flex-direction: column;
+    height: 100vh !important;
+    width: 100vw !important;
+    border-radius: 0 !important;
+  }
+
+  .modal-header {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 482px) and (max-width: 1200px) {
+  .thumbnail-button, .thumbnail-button-special {
+    width: 150px;
+    height: 212px;
+  }
+
+  .carousel > div:first-of-type, .carousel > div:last-of-type {
+    margin-left: 15px;
+  }
+
+  .carousel {
+    padding: 10px 0;
+  }
+
+  h2 {
+    margin-left: 15px;
+    padding-top: 15px;
+  }
+
+  .modal-open {
+    height: 550px;
+    width: 80vw;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .thumbnail-button {
+    width: 275px;
+    height: 155px;
+  }
+
+  .thumbnail-button-special {
+    width: 240px;
+    height: 338px;
+  }
+
+  .modal-open {
+    height: 550px;
+    width: 60vw;
+  }
+}
+
+.thumbnail-button {
+  background-size: cover;
+  background-color: black;
+  background-position: center;
+  background-blend-mode: screen;
+  flex-shrink: 0;
+  scroll-margin: 100px;
+  opacity: 0.9;
+  transition: opacity 0.3s linear 0.2s;
+  border-radius: 5px;
+}
+
+.thumbnail-button img {
+  border-radius: 5px;
+}
+
+.thumbnail-button-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: inherit;
+  color: white;
+  text-align: center;
+}
+
+.thumbnail-button-special {
+  background-size: cover;
+  background-color: black;
+  background-position: center;
+  flex-shrink: 0;
+  scroll-margin: 100px;
+  border-radius: 5px;
+}
+
+.thumbnail-button-selected {
+  transform: scale(1.05);
+  transition: all .2s ease-in-out;
+  border: 1px solid greenyellow;
+  scroll-margin: 50px;
+  opacity: 1.0;
+}
+
+.rating-label {
+  border: 1px solid #ccc;
+  display: inline;
+  padding: 5px 8px;
+  font-size: 12px;
+  background-color: #444;
+  color: #ccc;
+  border-radius: 2px;
+}
+
+.releaseYear-label {
+  font-size: 12px;
+  color: #ccc;
+  font-style: italic;
+}
+
+
+/* Modal styling */
+.modal-open {
+  z-index: 100;
+  background-color: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  border: 1px solid #333;
+  filter: drop-shadow(0 0 0.75rem black);
+}
+
+.modal-open > * {
+  flex: 1;
+}
+
+.modal-open h1 {
+  color: #ccc;
+}
+
+.modal-content {
+  padding: 20px;
+  color: white;
+  font-size: 0.9em;
+}
+
+.modal-header {
+  background-color: black;
+  height: 100%;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: screen;
+}
+
+.modal-header span {
+  position: relative;
+  top: 80%;
+  left: 15px;
+}
+
+.modal-background {
+  background: rgba(0,0,0,0.8);
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  background-color: #333;
+  height: 100px;
+}
